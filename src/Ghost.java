@@ -1,5 +1,5 @@
 
 
-public abstract class Ghost implements Movable, Positionable {
+public abstract class Ghost implements IMovable, IPositionable {
     
 }
