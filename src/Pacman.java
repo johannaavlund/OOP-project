@@ -7,11 +7,15 @@ import java.awt.*;
 public class Pacman {
 
     private static DrawWorld world;
+    private static Avatarmodel model;
  
 
     public static void main(String[] args){
-        world = new DrawWorld(800,800);
+        model = new Avatarmodel();
+        model.add(new Player(){});
+        world = new DrawWorld(800,800, model);
         Window window = new Window("first world", world);
+
     }
 
 }
