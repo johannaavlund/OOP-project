@@ -1,4 +1,4 @@
-package com.example.pacmanproject;
+package com.example.oopprojekt;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
