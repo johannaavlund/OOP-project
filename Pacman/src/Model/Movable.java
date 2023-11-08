@@ -1,6 +1,8 @@
 package Model;
 public interface Movable {
     void move();
-    void turnLeft();
-    void turnRight();
+    void goLeft();
+    void goRight();
+    void goUp();
+    void goDown();
 }
