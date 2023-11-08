@@ -1,0 +1,1 @@
+Allt grafiskt som kommer att synas utåt kommer att finnas i view. 
