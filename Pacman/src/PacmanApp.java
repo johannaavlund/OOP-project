@@ -14,8 +14,7 @@ public class PacmanApp {
  
 
     public static void main(String[] args){
-        world = new DrawWorld(800,800);
-        Window window = new Window("first world", world);
+        ProgramFrame startpage = new ProgramFrame
     }
 
 }
