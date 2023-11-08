@@ -2,15 +2,15 @@ package View;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class DrawWorld extends JPanel{
+public class GameView extends JPanel{
     private final Font smallFont = new Font("vilken font vill vi ha??", Font.BOLD, 14);
     private boolean checkIfGameIsRunning = false;
     private boolean checkIfPacmanAlive = false;
 
     //Storlek på rutan 
-    private final int BlockSize = 16 ;
-    private final int NumOfBlocks = 32;  //lite osäker på hur vi ska lösa detta
-    private final int ScreenSize = NumOfBlocks * BlockSize; // säg NumOfBlocks = 15, ger 225 möjliga positioner för pacman att röra sig på
+    public final int BlockSize = 16 ;
+    public final int NumOfBlocks = 32;  //lite osäker på hur vi ska lösa detta
+    public final int ScreenSize = NumOfBlocks * BlockSize; // säg NumOfBlocks = 15, ger 225 möjliga positioner för pacman att röra sig på
     private int lives, score;
     private int NumOfGohst = 6;
 
@@ -26,13 +26,15 @@ public class DrawWorld extends JPanel{
     //många siffror som ska 
     private final short levelData[] = {
 
+
+
     };
 
     // 0=blue, 1=left border, 2=top border, 4=right border, 8=bottom border, 16=vita pluppar
     // man plussar ihop siffrorna för att få pluppar med önskade egenskaper
 
 
-    public DrawWorld(int x, int y){
+    public GameView(int x, int y){
         loadImages();
         initVariables();
         addKeyListener(new TAdapter());
