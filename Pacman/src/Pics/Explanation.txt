@@ -1,0 +1,2 @@
+I denna mapp hittas bilder på de olika objekten i spelet.
+Bilderna är namngivna efter de olika objekten. 
