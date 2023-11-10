@@ -1,1 +1,13 @@
 En controller är....
+
+https://www.youtube.com/watch?v=IyfB0u9g2x0 
+
+
+
+Controller skapar modell och viewn, 
+
+controller uppdaterar sig, be modellen uppdatera sig, tar de värdet och ber view uppdatera sig 
+
+
+Controllen kan ge modelen en eventhandler, modellen innehåller eventhandlers, score uppdateras och ljud uppdateras -->
+skickas till viewn 
