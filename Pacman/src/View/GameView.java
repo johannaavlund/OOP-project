@@ -1,7 +1,6 @@
 package View;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -43,8 +42,7 @@ public class GameView extends JPanel{
 
 
     //många siffror som ska 
-    private final short levelData[] = {
-
+    private final short levelData[] = {  //controller, kalla i view, logik
 
 
     };
@@ -53,7 +51,7 @@ public class GameView extends JPanel{
     // man plussar ihop siffrorna för att få pluppar med önskade egenskaper
 
 
-    public GameView(int x, int y){
+    public GameView(int x, int y){  //kallar på alla metoder som ritar upp vyn, ska va i view
         loadImages();
         initVariables();
         addKeyListener(new TAdapter());
@@ -63,8 +61,8 @@ public class GameView extends JPanel{
        // setPreferredSize(new Dimension(x,y));
     } 
 
-    private void loadImages(){
-        PacmanDown = new ImageIcon("pathen för bilderna");
+    private void loadImages(){   //view? eller är det logik att ladda in bilder??
+        PacmanDown = new ImageIcon("path för bild");
         PacmanUp = new ImageIcon();
     //gör för alla bilder
     }
@@ -78,7 +76,7 @@ public class GameView extends JPanel{
         dx = new int[4];
         dy = new int [4];
 
-        timer = new Timer(40, this); // avgöär hur många gånger som vyn uppdateras
+        timer = new Timer(40, this); // avgör hur många gånger som vyn uppdateras
         timer.restart();
     }
 
@@ -92,11 +90,11 @@ public class GameView extends JPanel{
 
     //startar spelet, inte ligga i view
 
-    public void playGame(Graphics2D g2D){
+    public void playGame(Graphics2D g2D){   //view
 
     }
 
-    private void initLevel(){
+    private void initLevel(){  //View
         int i;
         for(i=0; i<NumOfBlocks*NumOfBlocks; i++){
             screenData[i] = levelData[i];
@@ -105,7 +103,7 @@ public class GameView extends JPanel{
         
     }
 
-    private void continueLevel(){
+    private void continueLevel(){   //Model, logik bakom uppritandet av banan
         int dy = 1;
         int random;
         for( int i = 0; i < NumOfKen; i++){
@@ -130,7 +128,7 @@ public class GameView extends JPanel{
     }   //vet ej vad denna gör om jag ska vara ärlig, skapar den en ny level när man dör??
 //kanke, för varje i skapas en ny level med nya dimensioner osv...
 
-public void paintComponent(Graphics g){
+public void paintComponent(Graphics g){   //view
     super.paintComponent(g);
     Graphics2D g2D = (Graphics2D) g;
     g2D.setColor(Color.PINK);
@@ -148,7 +146,7 @@ public void paintComponent(Graphics g){
 }
 
 
-    class TAdapter extends KeyAdapter{
+    class TAdapter extends KeyAdapter{  //ska va en egen klass som gör sin grej, dålig jävla kod, kan ärva
         public void keyPressed(KeyEvent e){
             int key = e.getKeyCode();
             if (checkIfGameIsRunning) {
