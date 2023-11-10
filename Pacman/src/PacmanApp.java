@@ -22,8 +22,6 @@ public class PacmanApp {
         ProgramFrame frame = new ProgramFrame("test");
         frame.getContentPane().add(gc);
     
-
-
         //ProgramFrame startpage = new ProgramFrame("start page", null, null);
         //ProgramFrame gamepage = new ProgramFrame("game page", null, null);
     }
