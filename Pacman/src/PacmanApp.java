@@ -8,7 +8,7 @@ import javax.swing.Timer;
 import Controller.GameController;
 
 import java.awt.*;
-
+ 
 
 public class PacmanApp {
     static GameController gc;
