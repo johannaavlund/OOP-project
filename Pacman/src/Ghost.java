@@ -69,19 +69,31 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
 
         if(curDirection == Direction.LEFT){
             double newPosX = curX - speed_x;
-            curX = newPosX;
+            if (collidesWithWalls(newPosX, curY)== true){
+                curX = newPosX;
+            }
+            else{}
         }
         if(curDirection == Direction.RIGHT){
             double newPosX = curX + speed_x;
-            curX = newPosX;
+            if (collidesWithWalls(newPosX, curY)== true){
+                curX = newPosX;
+            }
+            else{}
         }
         if(curDirection == Direction.UP){
             double newPosY = curY + speed_y;
-            curY = newPosY;
+            if(collidesWithWalls(newPosY, curX)==true){
+                curY = newPosY;
+            }
+            else{}
         }
         if(curDirection == Direction.DOWN){
             double newPosY = curY -speed_y;
-            curY = newPosY;
+            if(collidesWithWalls(newPosY, curX)==true){
+                curY = newPosY;
+            }
+            else{}
         }
 
         pos_x = curX;
@@ -89,8 +101,8 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
     
     }
 
-    public boolean collidesWithWalls(int newPosX, int newPosY) {
-        if(newPosX==0 && newPosY==0){
+    public boolean collidesWithWalls(double newPosX, double newPosY) {
+        if(newPosX==0 && newPosY==0){ //här kommer det så andra villkor med Blocksize osv men har inte dom än
             return true;
         }
         else{
