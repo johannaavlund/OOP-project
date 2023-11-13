@@ -1,4 +1,3 @@
-package Controller;
 import java.awt.Color;
 import java.awt.Label;
 import java.awt.event.*;
