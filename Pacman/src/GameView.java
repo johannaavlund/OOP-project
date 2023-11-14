@@ -15,7 +15,7 @@ public class GameView extends JPanel{
     private int NumOfGohst = 6;
 
     //lägga in bilder på pacman, hjärta, spöke, specialgrejer 
-    private image  
+   // private image  
 
     // inte i view??
     private final int MaxNumOfKen = 12;

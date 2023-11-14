@@ -3,12 +3,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public abstract class Ghost extends GameState implements Movable, Positionable{
-    private double pos_x;
-    private double pos_y;
+    private int pos_x;
+    private int pos_y;
     public static final int frameRate = 5;
     private static final int CagePos = 250;
-    private double speed_x;
-    private double speed_y;
+    private int speed_x;
+    private int speed_y;
     private String name;
     protected GameState.Direction lastDirection = GameState.Direction.LEFT;
     protected GameState.Direction curDirection;
@@ -29,8 +29,6 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
         this.speed_y = speed_y;
         this.name = name;
     }
-
-
 
     public int getPosX(){
         return this.pos_x;
@@ -71,32 +69,32 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
 
     @Override
     public void move(){
-        double curX = this.pos_x;
-        double curY = this.pos_y;
+        int curX = this.pos_x;
+        int curY = this.pos_y;
 
         if(curDirection == Direction.LEFT){
-            double newPosX = curX - speed_x;
+            int newPosX = curX - speed_x;
             if (collidesWithWalls(newPosX, curY)== true){
                 curX = newPosX;
             }
             else{}
         }
         if(curDirection == Direction.RIGHT){
-            double newPosX = curX + speed_x;
+            int newPosX = curX + speed_x;
             if (collidesWithWalls(newPosX, curY)== true){
                 curX = newPosX;
             }
             else{}
         }
         if(curDirection == Direction.UP){
-            double newPosY = curY + speed_y;
+            int newPosY = curY + speed_y;
             if(collidesWithWalls(newPosY, curX)==true){
                 curY = newPosY;
             }
             else{}
         }
         if(curDirection == Direction.DOWN){
-            double newPosY = curY -speed_y;
+            int newPosY = curY -speed_y;
             if(collidesWithWalls(newPosY, curX)==true){
                 curY = newPosY;
             }
@@ -108,7 +106,7 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
     
     }
 
-    public boolean collidesWithWalls(double newPosX, double newPosY) {
+    public boolean collidesWithWalls(int newPosX, int newPosY) {
         if(newPosX==0 && newPosY==0){ //här kommer det så andra villkor med Blocksize osv men har inte dom än
             return true;
         }
