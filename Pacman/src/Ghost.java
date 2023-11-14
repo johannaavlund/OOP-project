@@ -13,10 +13,16 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
     protected GameState.Direction lastDirection = GameState.Direction.LEFT;
     protected GameState.Direction curDirection;
 
+    protected final int ATTACK = 250;
+	protected final int SCATTER = 120;
+    protected boolean isAttacking = false;
+    private int scoreValue;
+	private boolean scatter;
+
     //bild
     //state
 
-    public Ghost(double pos_x, double pos_y, double speed_x, double speed_y, String name){
+    public Ghost(int pos_x, int pos_y, int speed_x, int speed_y, String name){
         this.pos_x = pos_x;
         this.pos_y = pos_y;
         this.speed_x = speed_x;
@@ -25,19 +31,20 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
     }
 
 
-    public double getPosX(){
+
+    public int getPosX(){
         return this.pos_x;
     }
 
-    public double getPosY(){
+    public int getPosY(){
         return this.pos_y;
     }
 
-    public double getSpeedX(){
+    public int getSpeedX(){
         return this.speed_x;
     }
 
-    public double getSpeedY(){
+    public int getSpeedY(){
         return this.speed_y;
     }
 
@@ -45,16 +52,16 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
         return this.name;
     }
 
-    public void setPosX(double x){
+    public void setPosX(int x){
         this.pos_x = x;
     }
-    public void setPosY(double y){
+    public void setPosY(int y){
         this.pos_y = y;
     }
-    public void setSpeedX(double speedX){
+    public void setSpeedX(initVariables speedX){
         this.speed_x = speedX;
     }
-    public void setSpeedY(double speedY){
+    public void setSpeedY(int speedY){
         this.speed_y = speedY;
     }
     public void setName(String name){
@@ -110,4 +117,10 @@ public abstract class Ghost extends GameState implements Movable, Positionable{
         }
 
     }
+    public boolean isScattered(){
+        return scatter;
+    }
+    public int getValueOfScore() {
+		return scoreValue;
+	}
 }
