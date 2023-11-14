@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import GameState.Direction;
+
 public class Kendal extends Ghost { //Blinky
 
     private final int COUNTDOWN = 8;
@@ -13,7 +15,7 @@ public class Kendal extends Ghost { //Blinky
     public Kendal(int pos_x, int pos_y, int speed_x, int speed_y, String name) {
         super(pos_x, pos_y, speed_x, speed_y, name);
     }
-    protected Direction getMove(){
+    protected Direction Move(){
         int curX = this.pos_x();
         int curY = this.pos_y();
         GameState state = GameState.getInstance();
@@ -22,6 +24,23 @@ public class Kendal extends Ghost { //Blinky
             pacLives = curLives;
             cageTimer = COUNTDOWN;
             isAttacking = false;
+            countdownTimer = SCATTER;
+        }
+        if (cageTimer > 0){
+            if (cageTimer % mod == 0){
+                if (Direction.UP){
+                    curDirection = Direction.UP;
+                }
+                else{
+                    curDirection = Direction.DOWN;
+                }
+                Direction.UP != Direction.UP;
+            }
+            cageTimer --;
+            if(cageTimer<=0){
+                lastDirection = Direction.LEFT;
+                this.pos(getInitialOutOfCagePos());
+            }
         }
     }
 }
